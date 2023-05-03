@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:property_trade_app/Constant/constant.dart';
 import 'Screens/homepage.dart';
 
 void main() {

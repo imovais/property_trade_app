@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:property_trade_app/widgets/featurebox.dart';
-import 'package:property_trade_app/widgets/listTile.dart';
+import 'package:property_trade_app/widgets/list_tile.dart';
 
 import '../Constant/constant.dart';
 

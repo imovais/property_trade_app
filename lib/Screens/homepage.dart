@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Location',
+                          'Location:',
                           style:
                               myFontStyle(fontsizez: 13, colorz: Colors.black),
                         ),
