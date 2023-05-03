@@ -36,17 +36,20 @@ Widget iconFeatureBox(
     ftsize = 10;
     iconcoloring = primaryColor();
   }
-  return Row(
-    children: [
-      Icon(iconz, color: iconcoloring),
-      Padding(
-        padding: EdgeInsets.symmetric(horizontal: paddingz),
-        child: Text(
-          textz,
-          style:
-              myFontStyle(colorz: Colors.blueGrey.shade200, fontsizez: ftsize),
-        ),
-      )
-    ],
+  return SingleChildScrollView(
+    scrollDirection: Axis.horizontal,
+    child: Row(
+      children: [
+        Icon(iconz, color: iconcoloring),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: paddingz),
+          child: Text(
+            textz,
+            style: myFontStyle(
+                colorz: Colors.blueGrey.shade200, fontsizez: ftsize),
+          ),
+        )
+      ],
+    ),
   );
 }

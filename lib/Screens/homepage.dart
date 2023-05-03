@@ -48,9 +48,9 @@ class HomePage extends StatelessWidget {
                       width: 60,
                       height: 60,
                       decoration: BoxDecoration(
-                          //shape: BoxShape.circle,
-                          //color: Colors.amber,
-                          ),
+                        shape: BoxShape.circle,
+                        //color: Colors.amber,
+                      ),
                       child: Image.asset(
                           fit: BoxFit.cover,
                           'assets/images/profile_picture.jpg'),

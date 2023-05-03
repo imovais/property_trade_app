@@ -48,15 +48,18 @@ class MyFeatureBox extends StatelessWidget {
                     //ICONS OF FEATURE BOX
                     Padding(
                       padding: const EdgeInsets.only(top: 5),
-                      child: Row(
-                        children: [
-                          iconFeatureBox(iconz: Icons.bed, textz: '4 Bed'),
-                          iconFeatureBox(
-                              iconz: Icons.bathroom, textz: '4 Baths'),
-                          iconFeatureBox(
-                              iconz: Icons.car_crash_rounded,
-                              textz: '1 Garage'),
-                        ],
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            iconFeatureBox(iconz: Icons.bed, textz: '4 Bed'),
+                            iconFeatureBox(
+                                iconz: Icons.bathroom, textz: '4 Baths'),
+                            iconFeatureBox(
+                                iconz: Icons.car_crash_rounded,
+                                textz: '1 Garage'),
+                          ],
+                        ),
                       ),
                     )
                   ],

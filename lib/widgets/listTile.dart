@@ -28,19 +28,22 @@ class MyListTile extends StatelessWidget {
             '429 N Btourny Ave Los Angles',
             style: myFontStyle(
                 colorz: primaryColor(),
-                fontsizez: 14,
+                fontsizez: 12,
                 fontweightz: FontWeight.normal),
           ),
-          Row(
-            children: [
-              iconFeatureBox(iconz: Icons.bed, textz: '4 Bed', isSmall: true),
-              iconFeatureBox(
-                  iconz: Icons.bathroom, textz: '4 Baths', isSmall: true),
-              iconFeatureBox(
-                  iconz: Icons.car_crash_rounded,
-                  textz: '1 Garage',
-                  isSmall: true),
-            ],
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                iconFeatureBox(iconz: Icons.bed, textz: '4 Bed', isSmall: true),
+                iconFeatureBox(
+                    iconz: Icons.bathroom, textz: '4 Baths', isSmall: true),
+                iconFeatureBox(
+                    iconz: Icons.car_crash_rounded,
+                    textz: '1 Garage',
+                    isSmall: true),
+              ],
+            ),
           )
         ],
       ),
