@@ -1,51 +1,74 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Constant/constant.dart';
 
-class MyListTile extends StatelessWidget {
-  const MyListTile({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      isThreeLine: true,
-      // ignore: prefer_const_constructors
-      contentPadding: EdgeInsets.symmetric(vertical: 2),
-      tileColor: secondaryColor(),
-      leading: Image.asset(
-          height: 150,
-          width: 100,
-          fit: BoxFit.cover,
-          'assets/images/house_image.jpg'),
-      title: Text(
-        'RANCH HOME',
-        style: myFontStyle(colorz: primaryColor(), fontsizez: 18),
-      ),
-      subtitle: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+Widget listTile(
+    {String imagepath = '',
+    required String title,
+    required subtitle,
+    bool isNetworkImg = false}) {
+  return Card(
+    elevation: 5,
+    child: Container(
+      width: double.infinity,
+      height: 100.h,
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(10.r)),
+      child: Row(
         children: [
-          Text(
-            '429 N Btourny Ave Los Angles',
-            style: myFontStyle(
-                colorz: primaryColor(),
-                fontsizez: 12,
-                fontweightz: FontWeight.normal),
-          ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
+          isNetworkImg == true
+              ? Image.network(
+                  height: 100.w, width: 100.w, fit: BoxFit.cover, imagepath)
+              : Image.asset(
+                  height: 100.w,
+                  width: 100.w,
+                  fit: BoxFit.cover,
+                  'assets/images/house_image.jpg'),
+          Padding(
+            //padding: EdgeInsets.symmetric(horizontal: 13.w, vertical: 22.h),
+            padding: EdgeInsets.only(left: 13.w, top: 22.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                iconFeatureBox(iconz: Icons.bed, textz: '4 Bed', isSmall: true),
-                iconFeatureBox(
-                    iconz: Icons.bathroom, textz: '4 Baths', isSmall: true),
-                iconFeatureBox(
-                    iconz: Icons.car_crash_rounded,
-                    textz: '1 Garage',
-                    isSmall: true),
+                Text(
+                  title,
+                  style: TextStyle(
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w700,
+                      color: primaryColor()),
+                ),
+                SizedBox(
+                  height: 8.h,
+                ),
+                Text(
+                  subtitle,
+                  style: TextStyle(
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w400,
+                      color: primaryColor()),
+                ),
+                SizedBox(
+                  height: 8.h,
+                ),
+                Row(
+                  children: [
+                    iconFeatureBox(
+                        iconz: Icons.bed, textz: '4 Beds', isSmall: true),
+                    iconFeatureBox(
+                        iconz: Icons.bathroom_rounded,
+                        textz: '4 Bath',
+                        isSmall: true),
+                    iconFeatureBox(
+                        iconz: Icons.car_crash,
+                        textz: '1 Garage',
+                        isSmall: true),
+                  ],
+                )
               ],
             ),
           )
         ],
       ),
-    );
-  }
+    ),
+  );
 }

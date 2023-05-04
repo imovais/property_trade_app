@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property_trade_app/Screens/detail.dart';
 
 import '../Constant/constant.dart';
@@ -16,25 +17,27 @@ class MyFeatureBox extends StatelessWidget {
             context, MaterialPageRoute(builder: (context) => DetailScreen()));
       },
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.r),
         child: Container(
-            width: double.infinity,
-            height: 350,
+            width: 305.w,
+            height: 312.h,
             color: primaryColor(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.asset(
+                    width: 305.w,
+                    height: 212.h,
                     fit: BoxFit.fitWidth,
                     alignment: Alignment.topCenter,
                     'assets/images/house_image.jpg'),
 
-                SizedBox(height: 10), //sizebox
+                SizedBox(height: 10.h), //sizebox
 
                 //TITLE OF FEATURE BOX
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -42,18 +45,18 @@ class MyFeatureBox extends StatelessWidget {
                         'CRAFTSMAN HOUSE',
                         style: myFontStyle(
                             colorz: secondaryColor(),
-                            fontsizez: 18,
+                            fontsizez: 16.sp,
                             fontweightz: FontWeight.bold),
                       ),
                       Text('430 N Btoudry Ave Los Angeles',
                           style: myFontStyle(
                               colorz: secondaryColor(),
-                              fontsizez: 14,
+                              fontsizez: 13.sp,
                               fontweightz: FontWeight.w500)),
 
                       //ICONS OF FEATURE BOX
                       Padding(
-                        padding: const EdgeInsets.only(top: 5),
+                        padding: EdgeInsets.only(top: 5.h),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(

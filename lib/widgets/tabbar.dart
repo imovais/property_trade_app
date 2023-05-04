@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../Constant/constant.dart';
 
@@ -22,9 +23,11 @@ class MyCustomTabBar extends StatelessWidget {
           unselectedLabelColor: primaryColor(),
           isScrollable: true,
           //unselectedLabelStyle: TextStyle(color: secondaryColor()),
-          labelPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          labelPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
           labelStyle: TextStyle(
-              fontFamily: 'Mulish', fontSize: 18, fontWeight: FontWeight.bold),
+              fontFamily: 'Mulish',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.bold),
           indicator: BoxDecoration(
               borderRadius: BorderRadius.circular(10), color: primaryColor()),
           tabs: [

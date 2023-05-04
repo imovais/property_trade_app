@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../Constant/constant.dart';
 
@@ -14,7 +15,7 @@ class MyHeroText extends StatelessWidget {
         child: Text(
           'Discover Best Suitable Property',
           style: myFontStyle(
-              fontsizez: 24,
+              fontsizez: 24.sp,
               fontweightz: FontWeight.bold,
               colorz: primaryColor()),
         ));

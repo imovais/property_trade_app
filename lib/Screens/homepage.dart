@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property_trade_app/Screens/housetabbarview.dart';
 
 import '../Constant/constant.dart';
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
       child: SafeArea(
         child: Scaffold(
           body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: 35.w, vertical: 30.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -31,13 +32,13 @@ class HomePage extends StatelessWidget {
                       children: [
                         Text(
                           'Location:',
-                          style:
-                              myFontStyle(fontsizez: 13, colorz: Colors.black),
+                          style: myFontStyle(
+                              fontsizez: 13.sp, colorz: Colors.black),
                         ),
                         Text(
                           'Los Angeles, CA',
                           style: myFontStyle(
-                              fontsizez: 15,
+                              fontsizez: 14.sp,
                               fontweightz: FontWeight.bold,
                               colorz: primaryColor()),
                         )
@@ -48,12 +49,14 @@ class HomePage extends StatelessWidget {
                       width: 60,
                       height: 60,
                       decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        //color: Colors.amber,
-                      ),
-                      child: Image.asset(
-                          fit: BoxFit.cover,
-                          'assets/images/profile_picture.jpg'),
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              image: AssetImage('assets/images/dp.jpg'))
+                          //color: Colors.amber,
+                          ),
+                      // child: Image.asset(
+                      //     fit: BoxFit.cover,
+                      //     'assets/images/profile_picture.jpg'),
                     ),
                   ],
                 ),

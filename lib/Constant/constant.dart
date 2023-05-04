@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 //import 'package:google_fonts/google_fonts.dart';
 
 Color primaryColor() {
@@ -22,31 +23,39 @@ TextStyle myFontStyle(
       fontWeight: fontweightz);
 }
 
-Widget iconFeatureBox(
-    {required IconData iconz, required String textz, bool isSmall = false}) {
+Widget iconFeatureBox({
+  required IconData iconz,
+  required String textz,
+  bool isSmall = false,
+  Color textcolorz = Colors.black,
+}) {
   double paddingz;
   double ftsize;
   Color iconcoloring;
+  Color? textcolorz;
   if (isSmall == false) {
-    paddingz = 10;
-    ftsize = 16;
+    paddingz = 9.w;
+    ftsize = 12.sp;
     iconcoloring = Colors.yellow;
+    textcolorz = Color(0xffEAF1FF);
   } else {
-    paddingz = 5;
-    ftsize = 10;
+    paddingz = 4.w;
+    ftsize = 8.sp;
     iconcoloring = primaryColor();
   }
   return SingleChildScrollView(
     scrollDirection: Axis.horizontal,
     child: Row(
       children: [
-        Icon(iconz, color: iconcoloring),
+        Icon(size: 18.w, iconz, color: iconcoloring),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: paddingz),
           child: Text(
             textz,
-            style: myFontStyle(
-                colorz: Colors.blueGrey.shade200, fontsizez: ftsize),
+            style: TextStyle(
+                fontSize: ftsize,
+                fontWeight: FontWeight.w400,
+                color: textcolorz),
           ),
         )
       ],
