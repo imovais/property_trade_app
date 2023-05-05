@@ -33,10 +33,10 @@ class MyCustomTabBar extends StatelessWidget {
           tabs: [
             Tab(child: Text('House')),
             Tab(child: Text('Apartement')),
-            Tab(child: Text('Apartement')),
-            Tab(child: Text('Apartement')),
+            Tab(child: Text('Plots')),
+            Tab(child: Text('Residential')),
             Tab(
-              child: Text('Flot'),
+              child: Text('Commercial'),
             )
           ]),
     );

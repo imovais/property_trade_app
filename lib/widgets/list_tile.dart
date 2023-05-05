@@ -18,11 +18,11 @@ Widget listTile(
         children: [
           isNetworkImg == true
               ? Image.network(
-                  height: 100.w, width: 100.w, fit: BoxFit.cover, imagepath)
+                  height: 80.w, width: 80.w, fit: BoxFit.fill, imagepath)
               : Image.asset(
-                  height: 100.w,
-                  width: 100.w,
-                  fit: BoxFit.cover,
+                  height: 80.w,
+                  width: 80.w,
+                  fit: BoxFit.fill,
                   'assets/images/house_image.jpg'),
           Padding(
             //padding: EdgeInsets.symmetric(horizontal: 13.w, vertical: 22.h),

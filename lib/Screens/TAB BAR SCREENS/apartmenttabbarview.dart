@@ -5,10 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property_trade_app/widgets/featurebox.dart';
 import 'package:property_trade_app/widgets/list_tile.dart';
 
-import '../Constant/constant.dart';
+import '../../Constant/constant.dart';
 
-class HouseTabBarView extends StatelessWidget {
-  const HouseTabBarView({super.key});
+class ApartmentTabBarView extends StatelessWidget {
+  const ApartmentTabBarView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,10 @@ class HouseTabBarView extends StatelessWidget {
           SizedBox(height: 10),
 
           //FEATURE BOX
-          MyFeatureBox(),
+          MyFeatureBox(
+              imgpath:
+                  'https://thumbs.dreamstime.com/b/housing-estate-6045486.jpg',
+              isNetworkImag: true),
 
           SizedBox(
             height: 20,

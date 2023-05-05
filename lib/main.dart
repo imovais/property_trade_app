@@ -3,8 +3,6 @@
 import 'package:flutter/material.dart';
 //import 'package:property_trade_app/Constant/constant.dart';
 import 'Screens/Login Screens/firstscreen.dart';
-import 'Screens/Login Screens/loginscreen.dart';
-import 'Screens/homepage.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
@@ -23,7 +21,7 @@ class MyApp extends StatelessWidget {
       builder: (BuildContext context, Widget? child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: LoginScreen(),
+          home: FirstScreen(),
         );
       },
     );

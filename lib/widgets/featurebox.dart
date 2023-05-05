@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,7 +7,10 @@ import 'package:property_trade_app/Screens/detail.dart';
 import '../Constant/constant.dart';
 
 class MyFeatureBox extends StatelessWidget {
-  const MyFeatureBox({super.key});
+  String imgpath;
+  bool isNetworkImag = false;
+
+  MyFeatureBox({super.key, this.imgpath = '', required this.isNetworkImag});
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +28,19 @@ class MyFeatureBox extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(
-                    width: 305.w,
-                    height: 212.h,
-                    fit: BoxFit.fitWidth,
-                    alignment: Alignment.topCenter,
-                    'assets/images/house_image.jpg'),
+                isNetworkImag == true
+                    ? Image.network(
+                        width: 305.w,
+                        height: 212.h,
+                        fit: BoxFit.fitWidth,
+                        alignment: Alignment.topCenter,
+                        imgpath)
+                    : Image.asset(
+                        width: 305.w,
+                        height: 212.h,
+                        fit: BoxFit.fitWidth,
+                        alignment: Alignment.topCenter,
+                        'assets/images/house_image.jpg'),
 
                 SizedBox(height: 10.h), //sizebox
 

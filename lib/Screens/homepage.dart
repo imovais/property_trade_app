@@ -2,11 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:property_trade_app/Screens/housetabbarview.dart';
+import 'package:property_trade_app/Screens/TAB%20BAR%20SCREENS/housetabbarview.dart';
 
 import '../Constant/constant.dart';
+import '../widgets/bottomnavigationbar.dart';
 import '../widgets/herotext.dart';
 import '../widgets/tabbar.dart';
+import 'TAB BAR SCREENS/apartmenttabbarview.dart';
+import 'TAB BAR SCREENS/plottabbarview.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,8 +20,9 @@ class HomePage extends StatelessWidget {
       length: 5,
       child: SafeArea(
         child: Scaffold(
+          bottomNavigationBar: BNavBar(),
           body: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h),
+            padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 20.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
 
@@ -72,10 +76,8 @@ class HomePage extends StatelessWidget {
                     child: TabBarView(
                   children: [
                     HouseTabBarView(),
-                    Center(
-                      child: Text('about'),
-                    ),
-                    HouseTabBarView(),
+                    ApartmentTabBarView(),
+                    PlotTabBarView(),
                     Center(
                       child: Text('contact'),
                     ),
