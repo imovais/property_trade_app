@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property_trade_app/Constant/constant.dart';
 
+import '../widgets/galary_images_widget.dart';
+
 class DetailScreen extends StatelessWidget {
   const DetailScreen({super.key});
 
@@ -12,7 +14,7 @@ class DetailScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 36.w, vertical: 20.h),
+          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -44,19 +46,42 @@ class DetailScreen extends StatelessWidget {
               SizedBox(
                 height: 10.h,
               ),
-              Text(
-                'CRAFTSMAN HOUSE',
-                style: myFontStyle(colorz: primaryColor(), fontsizez: 16.sp),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'CRAFTSMAN HOUSE',
+                        style: myFontStyle(
+                            colorz: primaryColor(), fontsizez: 16.sp),
+                      ),
+                      Text(
+                        '430 N Btoudry Ave Los Angeles',
+                        style: myFontStyle(
+                            colorz: primaryColor(),
+                            fontsizez: 13.sp,
+                            fontweightz: FontWeight.normal),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(3.w),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.r),
+                      color: secondaryColor(),
+                    ),
+                    child: IconButton(
+                        color: primaryColor(),
+                        onPressed: () {},
+                        icon: Icon(Icons.bookmark_border)),
+                  )
+                ],
               ),
-              Text(
-                '430 N Btoudry Ave Los Angeles',
-                style: myFontStyle(
-                    colorz: primaryColor(),
-                    fontsizez: 13.sp,
-                    fontweightz: FontWeight.normal),
-              ),
+
               SizedBox(
-                height: 5.h,
+                height: 10.h,
               ),
               Container(
                 height: 30.h,
@@ -76,7 +101,7 @@ class DetailScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 10.h,
+                height: 20.h,
               ),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 Row(
@@ -116,14 +141,15 @@ class DetailScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(6.r)),
                   child: Row(
                     children: [
-                      Icon(Icons.call, color: secondaryColor()),
+                      Icon(Icons.call, color: secondaryColor(), size: 18.sp),
                       SizedBox(
                         width: 5,
                       ),
                       Text('Call',
                           style: TextStyle(
                               color: secondaryColor(),
-                              fontWeight: FontWeight.bold)),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12.sp)),
                     ],
                   ),
                 ), // END BUTTON
@@ -149,13 +175,35 @@ class DetailScreen extends StatelessWidget {
                 style: myFontStyle(colorz: primaryColor(), fontsizez: 20),
               ),
 
+              SizedBox(
+                height: 10.h,
+              ),
+
               Row(
                 children: [
-                  Image.network(
-                      height: 65.w,
-                      width: 65.w,
-                      fit: BoxFit.cover,
-                      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80')
+                  galleryimage(
+                      imgUrl:
+                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhVgEu9P0-me3hvC8fS2GV549ySYvnnWnZ_g&usqp=CAU'),
+                  SizedBox(
+                    width: 5.w,
+                  ),
+                  galleryimage(
+                      imgUrl:
+                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhVgEu9P0-me3hvC8fS2GV549ySYvnnWnZ_g&usqp=CAU'),
+                  SizedBox(
+                    width: 5.w,
+                  ),
+                  galleryimage(
+                      imgUrl:
+                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhVgEu9P0-me3hvC8fS2GV549ySYvnnWnZ_g&usqp=CAU'),
+                  SizedBox(
+                    width: 5.w,
+                  ),
+                  galleryimage(
+                      isLast: true,
+                      count: '10',
+                      imgUrl:
+                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhVgEu9P0-me3hvC8fS2GV549ySYvnnWnZ_g&usqp=CAU'),
                 ],
               )
             ],

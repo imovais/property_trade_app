@@ -18,9 +18,10 @@ class HomePage extends StatelessWidget {
       child: SafeArea(
         child: Scaffold(
           body: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 35.w, vertical: 30.h),
+            padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+
               children: [
                 //Top Profile Row
                 Row(
